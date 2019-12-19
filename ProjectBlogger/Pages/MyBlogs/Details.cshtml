@@ -1,0 +1,61 @@
+﻿@page
+@model ProjectBlogger.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>MyBlogs</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.MyBlogs.BlogName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.MyBlogs.BlogName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.MyBlogs.Description)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.MyBlogs.Description)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.MyBlogs.ActualBlog)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.MyBlogs.ActualBlog)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.MyBlogs.ImageUrl)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.MyBlogs.ImageUrl)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.MyBlogs.ThumbUrl)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.MyBlogs.ThumbUrl)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.MyBlogs.BlogOfTheWeek)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.MyBlogs.BlogOfTheWeek)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.MyBlogs.User)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.MyBlogs.User.UserID)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.MyBlogs.MyBlogsID">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

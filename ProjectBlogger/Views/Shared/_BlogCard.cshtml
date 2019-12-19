@@ -1,0 +1,10 @@
+﻿@model ProjectBlogger.Models.MyBlogs
+
+<div class="thumbnail">
+    <img src="@Model.ThumbUrl" alt="">
+    <h2>
+        <a asp-controller="Blog" asp-action="BlogDetails" asp-route-id="@Model.MyBlogsID">@Model.BlogName</a>
+    </h2>
+    <h3>@Model.Description</h3>
+    <h2>Writer: @Model.UserID</h2>
+</div>

@@ -1,0 +1,16 @@
+﻿@*
+@model ProjectBlogger.View_Models.HomeViewModel
+
+
+        <partial name="_Carousel" />
+
+        <h2>Blog of the Week</h2>
+        <h4>Our weekly selection - just for you!</h4>
+
+
+       @foreach (var blog in Model.BlogOfTheWeek)
+        {
+            <partial name="_BlogCard" model="blog" />
+        }
+
+    *@

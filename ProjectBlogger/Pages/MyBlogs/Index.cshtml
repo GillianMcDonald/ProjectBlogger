@@ -1,0 +1,76 @@
+﻿@page
+@model ProjectBlogger.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+
+}
+
+@*want to put a restriction on this page so you can only see it if you are logged in.  
+    Want to add a for each so the blogs shown are only for the person who's logged in *@
+<h1>Your Blog Page</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.MyBlogs[0].BlogName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MyBlogs[0].Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MyBlogs[0].ActualBlog)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MyBlogs[0].ImageUrl)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MyBlogs[0].ThumbUrl)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MyBlogs[0].BlogOfTheWeek)
+            </th>
+            @*<th>
+                    @Html.DisplayNameFor(model => model.MyBlogs[0].User)
+                </th>*@
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.MyBlogs)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BlogName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ActualBlog)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ImageUrl)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ThumbUrl)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BlogOfTheWeek)
+                </td>
+                @*<td>
+                        @Html.DisplayFor(modelItem => item.User.UserID)
+                    </td>*@
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.MyBlogsID">Edit</a> |
+                    <a asp-page="./Details" asp-route-id="@item.MyBlogsID">Details</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.MyBlogsID">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

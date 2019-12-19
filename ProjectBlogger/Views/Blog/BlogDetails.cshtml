@@ -1,0 +1,14 @@
+﻿@model ProjectBlogger.Models.MyBlogs
+
+<h2>@Model.BlogName</h2>
+
+<div class="ActualBlog">
+    <img alt="@Model.BlogName" src="@Model.ImageUrl" />
+    <div class="BlogDetails">
+        <h3>@Model.BlogName</h3>
+        <h2>@Model.Description</h2>
+        <h2>@Model.ActualBlog</h2>
+        <h2>Writer: @Model.UserID</h2>
+    </div>
+
+</div>

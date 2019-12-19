@@ -1,0 +1,13 @@
+﻿@model ProjectBlogger.View_Models.BlogListViewModel
+
+<p class="lead">
+    <img class="img-responsive" alt="Blog Posts App" src="~/images/Starting-A-Blog-Here-Are-Ideas-For-Your-1st-5-Blog-Posts.png" />
+</p>
+
+@*this shows all blogs in the database*@
+<h1>@Model.CurrentUser</h1>
+@foreach (var blog in Model.MyBlogs)
+{
+    <partial name="_BlogCard" model="blog" />
+}
+
